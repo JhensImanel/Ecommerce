@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         dosis: ['Dosis', 'sans-serif'],
         victor: ['Victor Mono'],
+        quick: ['Quicksand', 'sans-serif'],
       },
       boxShadow: {
         'inset-custom': 'inset 0 6px 6px rgba(0, 0, 0, 0.1)',

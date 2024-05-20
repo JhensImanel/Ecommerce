@@ -1,9 +1,33 @@
-export default function ItemListContainer({ greeting }) {
+import { useState, useEffect } from 'react';
+
+import Product from '../Product/Product.jsx';
+
+const ItemListContainer = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('../../mocks/products.json');
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.log('No se econtraron productos...', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <>
-      <div className="mt-52 m-0 justify-center items-center flex text-2xl">
-        {greeting}
-      </div>
+      {products.map((id, ...product) => (
+        <div key={id}>
+          <Product product={product} />
+        </div>
+      ))}
     </>
   );
-}
+};
+
+export default ItemListContainer;
