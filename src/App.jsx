@@ -1,24 +1,27 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 import Footer from './components/Footer/Footer.jsx';
-import Home from './pages/Home.jsx';
-import Microprocesador from './pages/Microprocesador.jsx';
-import Monitor from './pages/Monitor.jsx';
 import NavBar from './components/NavBar/NavBar.jsx';
-import TarjetaDeVideo from './pages/TarjetaDeVideo.jsx';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer.jsx';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.jsx';
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
         <NavBar />
-        <ItemListContainer />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/monitores/:id" element={<Monitor />} />
-          <Route path="/tarjetas-de-video/:id" element={<TarjetaDeVideo />} />
-          <Route path="/microprocesadores/:id" element={<Microprocesador />} />
+          <Route
+            path="/"
+            element={
+              <ItemListContainer
+                greeting={
+                  'Desde aquí podrás ver un listado de todas las categorías'
+                }
+              />
+            }
+          />
+          <Route path="/category/:id" element={<ItemListContainer />} />
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
         </Routes>
         <Footer />
       </BrowserRouter>
