@@ -4,7 +4,6 @@ import ItemList from '../ItemList/ItemList.jsx';
 
 const ItemListContainer = ({ greeting }) => {
   const [items, setItems] = useState([]);
-  const [category, setCategory] = useState('');
   const { id: categoryId } = useParams();
 
   useEffect(() => {
@@ -13,13 +12,10 @@ const ItemListContainer = ({ greeting }) => {
         const response = await fetch('/public/mocks/items.json');
         const data = await response.json();
         if (categoryId) {
-          const filteredItems = data.filter((item) => item.category === categoryId);
+          const filteredItems = data.filter(
+            (item) => item.category === categoryId
+          );
           setItems(filteredItems);
-          if (filteredItems.length > 0) {
-            setCategory(filteredItems[0].category);
-          } else {
-            setCategory('');
-          }
         } else {
           setItems(data);
         }
@@ -31,10 +27,9 @@ const ItemListContainer = ({ greeting }) => {
     fetchData();
   }, [categoryId]);
 
-  const greetingMessage =
-    categoryId && category
-      ? `Desde aquí podrás ver un listado de ${category}`
-      : greeting;
+  const greetingMessage = categoryId
+    ? `Desde aquí podrás ver un listado de ${categoryId}`
+    : greeting;
 
   return (
     <div className="m-16">
