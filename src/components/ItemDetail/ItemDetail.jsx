@@ -1,13 +1,6 @@
-import {
-  Box,
-  Button,
-  Card,
-  CardContent,
-  CardMedia,
-  Typography,
-} from '@mui/material';
-import ItemCount from '../ItemCount/ItemCount.jsx';
+import { Box, Button, Card, CardContent, CardMedia, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
+import ItemCount from '../ItemCount/ItemCount.jsx';
 
 const ItemDetail = ({ item }) => {
   const { name, image, price, description, stock } = item;
