@@ -7,7 +7,7 @@
     "image": "https://ripleype.imgix.net/https%3A%2F%2Fmedia-prod-use-1.mirakl.net%2FSOURCE%2F2172299159074ac39f7387b030fe7a3a?w=750&h=555&ch=Width&auto=format&cs=strip&bg=FFFFFF&q=60&trimcolor=FFFFFF&trim=color&fit=fillmax&ixlib=js-1.1.0&s=b49625fa67f1aa23e93573e857bc3d6e",
     "category": "monitores",
     "calification": 4.6,
-    "stock": 20
+    "stock": 10
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "image": "https://oechsle.vteximg.com.br/arquivos/ids/10789146-1000-1000/image-dae5faa2df074a4f8fe8bb1b2b85bfae.jpg?v=637969902474600000",
     "category": "tarjetas de video",
     "calification": 4.9,
-    "stock": 15
+    "stock": 7
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@
     "image": "https://www.centralcomputer.com/media/catalog/product/cache/6ebaea33771c22d8dcc36c8c09cbd633/c/p/cpuamd5900xr.jpg",
     "category": "microprocesadores",
     "calification": 4.8,
-    "stock": 10
+    "stock": 5
   },
   {
     "id": 4,
@@ -37,7 +37,7 @@
     "image": "https://promart.vteximg.com.br/arquivos/ids/6237619-1000-1000/image-48cd59935bd2455c9df24aa070fc67b9.jpg?v=637941269108100000",
     "category": "monitores",
     "calification": 4.5,
-    "stock": 25
+    "stock": 12
   },
   {
     "id": 5,
@@ -47,7 +47,7 @@
     "image": "https://static.gigabyte.com/StaticFile/Image/Global/a3ca762dbed1ed1784adb4176957d840/Product/27846/Png",
     "category": "tarjetas de video",
     "calification": 4.7,
-    "stock": 20
+    "stock": 10
   },
   {
     "id": 6,
@@ -67,7 +67,7 @@
     "image": "https://oechsle.vteximg.com.br/arquivos/ids/14243967-1000-1000/image-9516f0a2c941404bbad3d678a101d20b.jpg?v=638155765001670000",
     "category": "monitores",
     "calification": 4.4,
-    "stock": 15
+    "stock": 8
   },
   {
     "id": 8,
@@ -87,7 +87,7 @@
     "image": "https://promart.vteximg.com.br/arquivos/ids/7731653-1000-1000/imageUrl_1.jpg?v=638381911979400000",
     "category": "monitores",
     "calification": 4.2,
-    "stock": 25
+    "stock": 12
   },
   {
     "id": 10,
@@ -97,7 +97,7 @@
     "image": "https://static.gigabyte.com/StaticFile/Image/Global/cc307cf8fe9c82330869634a3539db5b/Product/26313/Png",
     "category": "tarjetas de video",
     "calification": 4.8,
-    "stock": 12
+    "stock": 6
   },
   {
     "id": 11,
@@ -107,7 +107,7 @@
     "image": "https://alityan.com/wp-content/uploads/2022/07/07rfvBq3YYV4bfaooOD3INP-4.png",
     "category": "microprocesadores",
     "calification": 4.7,
-    "stock": 20
+    "stock": 10
   },
   {
     "id": 12,
@@ -117,6 +117,6 @@
     "image": "https://rimage.ripley.com.pe/home.ripley/Attachment/MKP/555/PMP20000230366/full_image-1.jpeg",
     "category": "monitores",
     "calification": 4.7,
-    "stock": 21
+    "stock": 9
   }
 ]

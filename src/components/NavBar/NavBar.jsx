@@ -8,6 +8,7 @@ const NavBar = () => {
   ];
 
   const menuIcons = [
+    { src: '/moon.svg', alt: 'iconDark', responsive: 'hidden sm:flex' },
     { src: '/user.svg', alt: 'iconUser', responsive: 'hidden sm:flex' },
     { src: '/search.svg', alt: 'iconSearch', responsive: 'hidden sm:flex' },
     { src: '/shopping-cart.svg', alt: 'iconCart', responsive: 'hidden sm:flex' },
@@ -24,7 +25,7 @@ const NavBar = () => {
         <li>
           {menuItems.map(({ to, name }, index) => (
             <Link
-              className="px-[8px] font uppercase font-bold font-dosis rounded py-[4px] hover:bg-gray-100 hover:underline text-sm"
+              className="px-[8px] font uppercase font-bold font-dosis rounded py-[4px] hover:bg-gray-100 text-sm"
               key={index}
               to={to}
             >

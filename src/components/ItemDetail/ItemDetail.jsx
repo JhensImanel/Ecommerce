@@ -15,8 +15,8 @@ const ItemDetail = ({ item }) => {
           style={{ height: '250px', width: '250px', objectFit: 'contain' }}
         />
       </Box>
-      <div className="flex justify-center underline mb-3">
-        <span>{name}</span>
+      <div className="flex justify-center my-2">
+        <strong className='font-dosis'>{name}</strong>
       </div>
       <span className="flex m-0 justify-center">{price}</span>
       <CardContent className="text-justify flex-grow">
@@ -26,11 +26,11 @@ const ItemDetail = ({ item }) => {
       </CardContent>
       <div className="flex justify-center items-center gap-2">
         <ItemCount className="flex justify-center" initial={1} stock={stock} />
-        <Button>Agregar al carrito</Button>
+        <Button className='hg' style={{background: 'white', color: 'green', border: '1px solid green', padding:'3px 4px 0px 4px', marginLeft: '6px'}}>Agregar al carrito</Button>
       </div>
-      <div className="flex justify-center mb-2">
+      <div className="flex justify-center my-2">
         <Button>
-          <Link to="/" className="text-sky-600">
+          <Link to="/">
             Volver
           </Link>
         </Button>
