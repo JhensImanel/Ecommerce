@@ -20,7 +20,7 @@ const ItemCartContainer = () => {
       total: totalPriceCart(),
     };
 
-    const db = getFirestore(); // Corrige el método aquí
+    const db = getFirestore();
     const docRef = collection(db, 'orders');
     await addDoc(docRef, order);
     clearCart();
