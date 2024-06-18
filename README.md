@@ -3,12 +3,13 @@
 ## Funcionalidades Principales
 
 - Muestra todos los productos
-- Panatalla modo dark y ligth
 - Permite escoger por categoria del producto
+- Panatalla modo dark y ligth
 <div className="flex">
-<img src="/screenshot/light.png" width="300">
-<img src="/screenshot/dark.png" width="300">
+<img src="/screenshot/allCategories.png" width="300">
 <img src="/screenshot/filterforcategory.png" width="300">
+<img src="/screenshot/dark.png" width="300">
+<img src="/screenshot/light.png" width="300">
 </div>
 
 ## Pantalla de detalles del Producto
