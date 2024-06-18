@@ -1,44 +1,60 @@
-import { useState, useEffect } from 'react';
+import { ClimbingBoxLoader } from 'react-spinners';
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  query,
+  where,
+} from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
+import { useState, useEffect, useContext } from 'react';
 import ItemList from '../ItemList/ItemList.jsx';
+import CartContext from '../../context/cart/CartContext.jsx';
 
 const ItemListContainer = ({ greeting }) => {
   const [items, setItems] = useState([]);
-  const { id: categoryId } = useParams();
+  const { id } = useParams();
+  const context = useContext(CartContext);
+
+  console.log(context);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/public/mocks/items.json');
-        const data = await response.json();
-        if (categoryId) {
-          const filteredItems = data.filter(
-            (item) => item.category === categoryId
-          );
-          setItems(filteredItems);
-        } else {
-          setItems(data);
-        }
+        const db = getFirestore();
+        const docsRef = collection(db, 'items');
+        const categoryID = id
+          ? query(docsRef, where('category', '==', id))
+          : docsRef;
+        const querySnapshot = await getDocs(categoryID);
+        setItems(
+          querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+        );
       } catch (error) {
-        console.log('No se encontraron productos...', error);
+        console.log(error);
       }
     };
-
     fetchData();
-  }, [categoryId]);
+  }, [id]);
 
-  const greetingMessage = categoryId
-    ? `Desde aquí podrás ver un listado de ${categoryId}`
+  const greetingMessage = id
+    ? `Desde aquí podrás ver un listado de ${id}`
     : greeting;
 
   return (
-    <div className="m-16">
-      <h1 className="flex justify-center text-2xl pt-1 mb-[18px] font-dosis text-center">
-        {greetingMessage}
-      </h1>
-      <div className="flex gap-10">
-        {items.length === 0 ? <p>Cargando...</p> : <ItemList items={items} />}
-      </div>
+    <div className="mx-16 mt-16 mb-12">
+      {items.length === 0 ? (
+        <div className="flex justify-center h-screen items-center">
+          <ClimbingBoxLoader/>
+        </div>
+      ) : (
+        <>
+          <div className="text-2xl pt-1 mb-[18px] font-dosis text-center select-none dark:text-black text-white ">
+            {greetingMessage}
+          </div>
+          <ItemList items={items} />
+        </>
+      )}
     </div>
   );
 };

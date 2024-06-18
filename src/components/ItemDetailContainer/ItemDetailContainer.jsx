@@ -1,5 +1,7 @@
-import { useState, useEffect } from 'react';
+import { ClimbingBoxLoader } from 'react-spinners';
+import { doc, getDoc, getFirestore } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail.jsx';
 
 const ItemDetailContainer = () => {
@@ -9,17 +11,16 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/public/mocks/items.json');
-        const data = await response.json();
-        if (id) {
-          const itemId = parseInt(id, 10); // Convertir el ID a número
-          const filteredItem = data.find((item) => item.id === itemId);
-          setItem(filteredItem);
+        const db = getFirestore();
+        const docRef = doc(db, 'items', id);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          setItem({ id: docSnap.id, ...docSnap.data() });
         } else {
-          console.log('No se proporcionó un id válido.');
+          console.log('No existe tal documento!');
         }
       } catch (error) {
-        console.log('No se encontraron productos...', error);
+        console.log(error);
       }
     };
 
@@ -27,8 +28,12 @@ const ItemDetailContainer = () => {
   }, [id]);
 
   return (
-    <div className="flex justify-center items-center h-full mt-24">
-      {!item ? <p>Cargando...</p> : <ItemDetail item={item} />}
+    <div className="flex justify-center h-screen items-center -mb-14">
+      {!item ? (
+        <ClimbingBoxLoader/>
+      ) : (
+        <ItemDetail item={item} />
+      )}
     </div>
   );
 };

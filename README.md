@@ -1,8 +1,18 @@
-# React + Vite
+# Ecommerce App + React 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Funcionalidades Principales
+- Muestra todos los productos
+- Panatalla modo dark y ligth
+- Permite escoger por categoria del producto
 
-Currently, two official plugins are available:
+## Pantalla de detalles del Producto
+- Proporciona una descripción detallada del producto.
+- Muestra el precio y el stock disponible.
+- Permite agregar el producto del carrito.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Pantalla del carrito
+- Proporciona una descripción detallada de los productos.
+- Muestra el precio y la cantidad del producto.
+- Muestra el precio total.
+
+<img src="/screenshot/" width="300">
