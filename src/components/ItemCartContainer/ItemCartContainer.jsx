@@ -1,6 +1,7 @@
 import { addDoc, getFirestore, collection } from 'firebase/firestore';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import CartContext from '../../context/cart/CartContext';
 import ItemCart from '../ItemCart/ItemCart';
 
@@ -13,14 +14,14 @@ const ItemCartContainer = () => {
     const order = {
       buyer: {
         name: 'Jhens Imanel',
-        phone: '936615284',
+        phone: '1244124',
         email: 'u1836291@gmail.com',
       },
       items: cart,
       total: totalPriceCart(),
     };
 
-    const db = getFirestore();
+    const db = getFirestore(); // Corrige el método aquí
     const docRef = collection(db, 'orders');
     await addDoc(docRef, order);
     clearCart();

@@ -37,8 +37,8 @@ const NavBar = () => {
         <MenuBar />
       </span>
 
-      <div>
-        <Link to="/" className="sm:hidden flex text-lg">
+      <div className='items-center flex text-center'>
+        <Link to="/" className="sm:hidden font-semibold flex text-lg">
           XARC
         </Link>
         <ul className="hidden sm:flex">
@@ -55,7 +55,7 @@ const NavBar = () => {
         </ul>
       </div>
 
-      <div className="flex items-center justify-end flex-grow basis-0 gap-1">
+      <div className="flex justify-end flex-grow basis-0 items-center">
         <DarkMode />
         <CartWidget />
       </div>

@@ -1,8 +1,8 @@
-import { ClimbingBoxLoader } from 'react-spinners';
 import { doc, getDoc, getFirestore } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail.jsx';
+import ItemDetailSkeleton from '../ItemDetail/ItemDetailSkeleton.jsx'
 
 const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
@@ -28,13 +28,15 @@ const ItemDetailContainer = () => {
   }, [id]);
 
   return (
-    <div className="flex justify-center h-screen items-center -mb-14">
-      {!item ? (
-        <ClimbingBoxLoader/>
-      ) : (
-        <ItemDetail item={item} />
-      )}
-    </div>
+    <>
+      <div className='flex justify-center h-screen items-center -mb-14'>
+        {!item ? (
+          <ItemDetailSkeleton />
+        ) : (
+          <ItemDetail item={item} />
+        )}
+      </div>
+    </>
   );
 };
 

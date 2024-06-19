@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
+
 import CartContext from './CartContext';
 
-const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]); //custom provider
+const CartProvider = ({ children }) => { // -> custom provider
+  const [cart, setCart] = useState(['1', '2']);
   const [totalPriceCart, setTotalPriceCart] = useState(0);
-  const [totalQuantityCart, setTotalQuantityCart] = useState();
+  const [totalQuantityCart, setTotalQuantityCart] = useState([]);
 
   useEffect(() => {
     setTotalPriceCart(
@@ -13,7 +14,6 @@ const CartProvider = ({ children }) => {
       setTotalQuantityCart(cart.reduce((acc, item) => acc + item.quantity, 0));
   }, [cart]);
 
-  //permite agregar un item al carrito
   const addItemCart = ({ item: product }) => {
     const itemExists = cart.some((item) => item.id === product.id);
     if (itemExists) {
@@ -30,7 +30,6 @@ const CartProvider = ({ children }) => {
     }
   };
 
-  
   const deleteItemCart = (id) => {
     setCart(cart.filter((item) => item.id != id));
   };

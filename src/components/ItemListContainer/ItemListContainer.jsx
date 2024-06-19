@@ -1,19 +1,14 @@
-import { ClimbingBoxLoader } from 'react-spinners';
-import {
-  collection,
-  getDocs,
-  getFirestore,
-  query,
-  where,
-} from 'firebase/firestore';
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect, useContext } from 'react';
-import ItemList from '../ItemList/ItemList.jsx';
+
 import CartContext from '../../context/cart/CartContext.jsx';
+import ItemList from '../ItemList/ItemList.jsx';
 
 const ItemListContainer = ({ greeting }) => {
   const [items, setItems] = useState([]);
   const { id } = useParams();
+
   const context = useContext(CartContext);
 
   console.log(context);
@@ -43,18 +38,10 @@ const ItemListContainer = ({ greeting }) => {
 
   return (
     <div className="mx-16 mt-16 mb-12">
-      {items.length === 0 ? (
-        <div className="flex justify-center h-screen items-center">
-          <ClimbingBoxLoader/>
-        </div>
-      ) : (
-        <>
-          <div className="text-2xl pt-1 mb-[18px] font-dosis text-center select-none dark:text-black text-white ">
-            {greetingMessage}
-          </div>
-          <ItemList items={items} />
-        </>
-      )}
+      <div className="text-2xl pt-1 mb-[18px] font-dosis text-center select-none dark:text-black text-white ">
+        {greetingMessage}
+      </div>
+      <ItemList items={items} />
     </div>
   );
 };

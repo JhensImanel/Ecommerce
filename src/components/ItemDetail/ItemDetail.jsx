@@ -1,23 +1,15 @@
-import {
-  Box,
-  Button,
-  Card,
-  CardContent,
-  CardMedia,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
+
 import CartContext from "../../context/cart/CartContext.jsx";
 import ItemCount from "../ItemCount/ItemCount.jsx";
 
 const ItemDetail = ({ item }) => {
   const { name, image, price, description, stock } = item;
-
   const [count, setCount] = useState(1);
 
   const { addItemCart } = useContext(CartContext);
-
   const navigate = useNavigate();
 
   const addItem = () => {
@@ -39,18 +31,19 @@ const ItemDetail = ({ item }) => {
         <div className="flex justify-center mb-2">
           <strong className="font-dosis">{name}</strong>
         </div>
-
         <span className="flex m-0 justify-center">${price}</span>
-
         <CardContent className="text-justify mb-2 text-sm">
           <Typography variant="body2" color="text.secondary">
             <span className="dark:text-black text-white">{description}</span>
           </Typography>
         </CardContent>
-
         <div className="flex justify-center items-center gap-2">
-          <ItemCount count={count} handleCount={setCount} stock={stock} />
-
+          <ItemCount
+            initial
+            count={count}
+            handleCount={setCount}
+            stock={stock}
+          />
           <button
             className="transition duration-300 ml-2 dark:hover:bg-green-600 font-normal hover:text-white dark:hover:text-white bg-white hover:bg-black text-black dark:text-green-600 py-[3px] rounded-md px-[6px] border-black border-[1.5px] dark:border-green-600"
             onClick={addItem}
@@ -58,13 +51,11 @@ const ItemDetail = ({ item }) => {
             Añadir al carrito
           </button>
         </div>
-
         <div className="flex justify-center my-2">
-          <Button sx={{ paddingBottom: "0px" }}>
-            <Link to="/">Volver</Link>
-          </Button>
+          <Link to="/">
+            <Button sx={{ paddingBottom: "0px" }}>Volver</Button>
+          </Link>
         </div>
-
         <Typography
           variant="body2"
           color="text.secondary"
@@ -84,5 +75,5 @@ const ItemDetail = ({ item }) => {
     </Card>
   );
 };
-
+  
 export default ItemDetail;

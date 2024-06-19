@@ -1,8 +1,9 @@
-import { initializeApp } from 'firebase/app';
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
-import './index.css';
+import { initializeApp } from "firebase/app";
+
+import AppRouter from './router/AppRouter.jsx'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,
@@ -15,8 +16,8 @@ const firebaseConfig = {
 
 initializeApp(firebaseConfig);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <AppRouter />
   </React.StrictMode>
 );

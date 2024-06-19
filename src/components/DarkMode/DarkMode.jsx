@@ -18,7 +18,7 @@ const DarkMode = () => {
   return (
     <button
       onClick={handleChangeTheme}
-      className="py-[4px] px-1 rounded-full dark:hover:bg-white hover:bg-gray-500 p-[3px]"
+      className="rounded-full dark:hover:bg-white hover:bg-gray-500 absolute sm:right-[104px] right-14 p-[2px]"
     >
       {theme === "dark" ? (
         <svg
