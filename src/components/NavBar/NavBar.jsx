@@ -45,7 +45,7 @@ const NavBar = () => {
           {menuItems.map(({ to, name }, index) => (
             <li key={index}>
               <Link
-                className="sm:flex hidden px-[8px] uppercase font-bold font-dosis rounded py-[4px] dark:hover:text-black dark:hover:bg-white hover:bg-gray-500 text-sm"
+                className="sm:flex hidden px-[8px] uppercase font-bold font-dosis rounded py-[4px] dark:hover:text-black dark:hover:bg-gray-200 hover:bg-gray-500 text-sm"
                 to={to}
               >
                 {name}

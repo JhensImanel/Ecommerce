@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import CartContext from './CartContext';
 
 const CartProvider = ({ children }) => { // -> custom provider
-  const [cart, setCart] = useState(['1', '2']);
+  const [cart, setCart] = useState([]);
   const [totalPriceCart, setTotalPriceCart] = useState(0);
   const [totalQuantityCart, setTotalQuantityCart] = useState([]);
 

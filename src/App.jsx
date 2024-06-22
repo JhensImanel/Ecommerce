@@ -9,7 +9,7 @@ import OrderContainer from "./components/OrderContainer/OrderContainer.jsx";
 
 const App = () => {
   return (
-    <div className="flex flex-col min-h-screen dark:bg-[#F0F8FF] bg-gray-900">
+    <div className="flex flex-col min-h-screen dark:bg-white bg-gray-900">
       <NavBar />
       <div className="flex-grow">
         <Routes>

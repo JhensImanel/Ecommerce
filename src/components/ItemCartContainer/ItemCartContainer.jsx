@@ -18,10 +18,10 @@ const ItemCartContainer = () => {
         email: 'u1836291@gmail.com',
       },
       items: cart,
-      total: totalPriceCart(),
+      total: totalPriceCart,
     };
 
-    const db = getFirestore(); // Corrige el método aquí
+    const db = getFirestore();
     const docRef = collection(db, 'orders');
     await addDoc(docRef, order);
     clearCart();
@@ -29,11 +29,11 @@ const ItemCartContainer = () => {
   };
 
   return (
-    <div>
+    <div className='mt-14'>
       {cart.map((item) => (
         <ItemCart key={item.id} item={item} />
       ))}
-      <p>Total: {totalPriceCart()}</p>
+      <p>Total: {totalPriceCart}</p>
       <button onClick={addOrder}>Finaliza compra</button>
     </div>
   );

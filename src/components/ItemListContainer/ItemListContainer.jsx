@@ -1,14 +1,18 @@
-import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
-import { useParams } from 'react-router-dom';
-import { useState, useEffect, useContext } from 'react';
-
-import CartContext from '../../context/cart/CartContext.jsx';
-import ItemList from '../ItemList/ItemList.jsx';
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  query,
+  where,
+} from "firebase/firestore";
+import { useParams } from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
+import CartContext from "../../context/cart/CartContext.jsx";
+import ItemList from "../ItemList/ItemList.jsx";
 
 const ItemListContainer = ({ greeting }) => {
   const [items, setItems] = useState([]);
   const { id } = useParams();
-
   const context = useContext(CartContext);
 
   console.log(context);
@@ -17,9 +21,9 @@ const ItemListContainer = ({ greeting }) => {
     const fetchData = async () => {
       try {
         const db = getFirestore();
-        const docsRef = collection(db, 'items');
+        const docsRef = collection(db, "items");
         const categoryID = id
-          ? query(docsRef, where('category', '==', id))
+          ? query(docsRef, where("category", "==", id))
           : docsRef;
         const querySnapshot = await getDocs(categoryID);
         setItems(
