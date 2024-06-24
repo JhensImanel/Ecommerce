@@ -13,12 +13,8 @@ const Item = ({ item }) => {
 
   return (
     <>
-      <Card
-        className={`${
-          loading ? "bg-transparent" : "bg-gray-800 dark:bg-[#D8D9DB] "
-        } flex flex-col h-full `}
-      >
-        <div className="pb-2 pt-2.5 dark:bg-gray-200 bg-black text-center border-b border-gray-300 dark:border-gray-600">
+      <Card className="flex flex-col h-full dark:bg-[#D8D9DB] bg-gray-800">
+        <div className="dark:bg-gray-200 bg-black dark:pb-1.5 pb-1.5 dark:pt-2.5 pt-1.5 text-center border-b border-gray-300 dark:border-gray-600">
           {loading ? (
             <div className="items-center flex justify-center">
               <Skeleton
