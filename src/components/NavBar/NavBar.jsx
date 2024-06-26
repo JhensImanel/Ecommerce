@@ -55,7 +55,7 @@ const NavBar = () => {
         </ul>
       </div>
 
-      <div className="flex justify-end flex-grow basis-0 items-center">
+      <div className="flex justify-end flex-grow basis-0 gap-2 items-center">
         <DarkMode />
         <CartWidget />
       </div>

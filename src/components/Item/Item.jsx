@@ -3,8 +3,8 @@ import { Box, Card, CardMedia, Skeleton, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 
 const Item = ({ item }) => {
-  const { id, name, image, description, stock } = item;
   const [loading, setLoading] = useState(true);
+  const { id, name, image, description, stock } = item;
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1000);
@@ -18,7 +18,7 @@ const Item = ({ item }) => {
           loading ? "bg-transparent" : "bg-gray-800 dark:bg-[#D8D9DB] "
         } flex flex-col h-full `}
       >
-        <div className="pb-2 pt-2.5 dark:bg-gray-200 bg-black text-center border-b border-gray-300 dark:border-gray-600">
+        <div className="pb-2 pt-2.5 dark:bg-gray-200 bg-[#15141B] text-center border-b border-gray-300 dark:border-gray-600">
           {loading ? (
             <div className="items-center flex justify-center">
               <Skeleton
@@ -89,7 +89,7 @@ const Item = ({ item }) => {
         </div>
 
         {loading ? (
-          <div className="dark:bg-gray-200 bg-black dark:pb-1.5 pb-0 dark:pt-2.5 pt-0 text-center justify-center flex">
+          <div className="dark:bg-gray-200 bg-[#15141B] pb-2 pt-2.5 text-center justify-center flex">
             <Skeleton
               animation="wave"
               variant="rounded"
@@ -101,7 +101,7 @@ const Item = ({ item }) => {
           <Typography
             variant="body2"
             color="text.secondary"
-            className="dark:bg-[#D8D9DB] bg-black border-t dark:border-gray-300 border-gray-600 pb-2 pt-2.5 text-center"
+            className="dark:bg-[#D8D9DB] bg-[#15141B] border-t dark:border-gray-300 border-gray-600 pb-2 pt-2.5 text-center"
           >
             <span className="dark:text-gray-900 text-gray-100">
               Stock disponible: {stock}

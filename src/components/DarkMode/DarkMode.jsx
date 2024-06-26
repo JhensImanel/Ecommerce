@@ -18,7 +18,7 @@ const DarkMode = () => {
   return (
     <button
       onClick={handleChangeTheme}
-      className="rounded-full dark:hover:bg-gray-200 hover:bg-gray-500 absolute sm:right-[104px] right-14 p-[2px]"
+      className="rounded-full dark:hover:bg-gray-200 hover:bg-gray-500 sm:right-[104px] right-14 p-[2px]"
     >
       {theme === "dark" ? (
         <svg

@@ -1,12 +1,11 @@
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-
 import ItemDetail from "../ItemDetail/ItemDetail.jsx";
 
 const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
-  
+  const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
   useEffect(() => {
@@ -17,11 +16,11 @@ const ItemDetailContainer = () => {
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
           setItem({ id: docSnap.id, ...docSnap.data() });
-        } else {
-          console.log("No existe tal documento!");
         }
       } catch (error) {
-        console.log(error);
+        console.error(error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -30,7 +29,7 @@ const ItemDetailContainer = () => {
 
   return (
     <div className="flex justify-center h-screen items-center -mb-14">
-      <ItemDetail item={item} />
+      <ItemDetail item={item} loading={loading} />
     </div>
   );
 };
