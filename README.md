@@ -3,7 +3,7 @@
 ## Funcionalidades Principales:
 
 - Muestra todos los productos.
-- Permite escojer por categoria del producto.
+- Muestra los productos por categoría.
 - Modo dark y ligth.
 <div className="flex">
 <img src="/screenshot/allCategories.png" width="300">
@@ -16,11 +16,10 @@
 
 - Proporciona una descripción detallada del producto.
 - Muestra el precio y el stock disponible.
-- Permite agregar el producto del carrito.
+- Permite agregar productos del carrito.
 <img src="/screenshot/itemdetail.png" width="300">
 
 ## Pantalla del carrito
 
-- Proporciona una descripción detallada de los productos.
 - Muestra la cantidad, la imagen y el precio del producto.
 - Muestra el precio total.
