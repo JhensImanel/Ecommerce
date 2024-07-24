@@ -1,10 +1,10 @@
 # Ecommerce App + React
 
-## Funcionalidades Principales
+## Funcionalidades Principales:
 
-- Muestra todos los productos
-- Permite escoger por categoria del producto
-- Panatalla modo dark y ligth
+- Muestra todos los productos.
+- Permite escojer por categoria del producto.
+- Modo dark y ligth.
 <div className="flex">
 <img src="/screenshot/allCategories.png" width="300">
 <img src="/screenshot/filterforcategory.png" width="300">
@@ -12,7 +12,7 @@
 <img src="/screenshot/light.png" width="300">
 </div>
 
-## Pantalla de detalles del Producto
+## Pantalla de detalles del Producto:
 
 - Proporciona una descripción detallada del producto.
 - Muestra el precio y el stock disponible.
